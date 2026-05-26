@@ -489,8 +489,7 @@ body.cluster-closing::before {
 }
 
 .manifesto-panel {
-    background: linear-gradient(rgba(196, 104, 40, 0.85), rgba(196, 104, 40, 0.95)), url('assets/metodologia_bg.png') no-repeat center center;
-    background-size: cover;
+    background-color: var(--terracotta);
     color: var(--alabaster);
 }
 
@@ -533,12 +532,11 @@ body.cluster-closing::before {
 .team-layout {
     width: 100%;
     height: 100%;
-    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 80px) clamp(40px, 6vh, 80px) clamp(20px, 5vw, 80px);
+    padding: 120px 90px 90px 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(rgba(196, 104, 40, 0.85), rgba(196, 104, 40, 0.95)), url('assets/metodologia_bg.png') no-repeat center center;
-    background-size: cover;
+    background-color: var(--terracotta);
 }
 
 .team-layout .section-title {
@@ -603,11 +601,10 @@ body.cluster-closing::before {
 .quote-panel {
     flex: 0 0 30%;
     height: 100%;
-    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 40px) clamp(40px, 6vh, 60px) clamp(20px, 5vw, 60px);
+    padding: 100px 40px 60px 60px;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(64, 69, 92, 0.85), rgba(64, 69, 92, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
-    background-size: cover;
+    background-color: var(--slate);
     border-right: 1px solid var(--border-glass);
 }
 
@@ -623,11 +620,10 @@ body.cluster-closing::before {
 .socials-panel {
     flex: 0 0 70%;
     height: 100%;
-    padding: clamp(60px, 8vh, 100px) clamp(20px, 4vw, 30px);
+    padding: 70px 30px 40px 30px;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(64, 69, 92, 0.85), rgba(64, 69, 92, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
-    background-size: cover;
+    background-color: var(--slate);
     overflow: hidden;
 }
 
@@ -726,10 +722,26 @@ body.cluster-closing::before {
     opacity: 0.5;
 }
 
+/* Backgrounds específicos de slides (Sem espaços pretos) */
+#slide-6 {
+    background-image: url('assets/metodologia_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#slide-7, #slide-8, #slide-9 {
+    background-image: url('assets/servicos_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* E. Metodologia & Laptops 3D (Slide 6) */
 .methodology-text {
-    background: linear-gradient(rgba(196, 104, 40, 0.8), rgba(196, 104, 40, 0.95)), url('assets/metodologia_bg.png') no-repeat center center;
-    background-size: cover;
+    background-color: rgba(10, 8, 15, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: var(--alabaster);
     flex: 0 0 45%;
     border-right: 1px solid var(--border-glass);
@@ -764,8 +776,7 @@ body.cluster-closing::before {
 
 .mockups-panel {
     flex: 0 0 55%;
-    background: linear-gradient(rgba(196, 104, 40, 0.85), rgba(196, 104, 40, 0.95)), url('assets/metodologia_bg.png') no-repeat center center;
-    background-size: cover;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -821,13 +832,14 @@ body.cluster-closing::before {
 /* F. Ecossistema de Serviços (Slide 7, 8) */
 .service-title-panel {
     flex: 0 0 35%;
-    background: linear-gradient(rgba(196, 104, 40, 0.8), rgba(196, 104, 40, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
-    background-size: cover;
+    background-color: rgba(10, 8, 15, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: var(--alabaster);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 70px);
+    padding: 110px 70px 80px 70px;
     border-right: 1px solid var(--border-glass);
 }
 
@@ -841,9 +853,8 @@ body.cluster-closing::before {
 
 .service-content-panel {
     flex: 0 0 65%;
-    background: linear-gradient(rgba(196, 104, 40, 0.85), rgba(196, 104, 40, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
-    background-size: cover;
-    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 80px);
+    background-color: transparent;
+    padding: 110px 80px 80px 80px;
     display: flex;
     align-items: center;
 }
@@ -931,15 +942,17 @@ body.cluster-closing::before {
     grid-template-columns: 1.155fr 0.845fr;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(196, 104, 40, 0.85), rgba(196, 104, 40, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
-    background-size: cover;
+    background-color: transparent;
 }
 
 .service-card-panel {
     border-right: 1px solid var(--border-glass);
-    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 80px);
+    padding: 110px 80px 80px 80px;
     overflow-y: auto;
     position: relative;
+    background-color: rgba(10, 8, 15, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .service-card-panel:last-child {
@@ -964,12 +977,13 @@ body.cluster-closing::before {
 .brands-layout {
     width: 100%;
     height: 100%;
-    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 90px);
+    padding: 110px 90px 90px 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(rgba(64, 69, 92, 0.85), rgba(64, 69, 92, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
-    background-size: cover;
+    background-color: rgba(10, 8, 15, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     position: relative;
 }
 
@@ -1026,12 +1040,11 @@ body.cluster-closing::before {
 .iv-manifest-layout {
     width: 100%;
     height: 100%;
-    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 80px);
+    padding: 110px 80px 80px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(rgba(64, 69, 92, 0.85), rgba(64, 69, 92, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
-    background-size: cover;
+    background-color: var(--slate);
 }
 
 .logo-header-iv {
@@ -1339,11 +1352,10 @@ body.cluster-closing::before {
 
 /* K. Slide de Encerramento (Slide 18) */
 .closing-panel {
-    background: linear-gradient(rgba(64, 69, 92, 0.85), rgba(64, 69, 92, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
-    background-size: cover;
+    background-color: var(--slate);
     color: var(--alabaster);
     flex: 0 0 48%;
-    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 80px);
+    padding: 120px 80px 80px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
