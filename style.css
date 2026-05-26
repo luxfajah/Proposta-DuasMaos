@@ -724,7 +724,8 @@ body.cluster-closing::before {
 
 /* E. Metodologia & Laptops 3D (Slide 6) */
 .methodology-text {
-    background-color: var(--terracotta);
+    background: linear-gradient(rgba(196, 104, 40, 0.8), rgba(196, 104, 40, 0.95)), url('assets/metodologia_bg.png') no-repeat center center;
+    background-size: cover;
     color: var(--alabaster);
     flex: 0 0 45%;
     border-right: 1px solid var(--border-glass);
@@ -759,7 +760,8 @@ body.cluster-closing::before {
 
 .mockups-panel {
     flex: 0 0 55%;
-    background-color: var(--terracotta);
+    background: linear-gradient(rgba(196, 104, 40, 0.85), rgba(196, 104, 40, 0.95)), url('assets/metodologia_bg.png') no-repeat center center;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -815,12 +817,13 @@ body.cluster-closing::before {
 /* F. Ecossistema de Serviços (Slide 7, 8) */
 .service-title-panel {
     flex: 0 0 35%;
-    background-color: var(--terracotta);
+    background: linear-gradient(rgba(196, 104, 40, 0.8), rgba(196, 104, 40, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
+    background-size: cover;
     color: var(--alabaster);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 110px 70px 80px 70px;
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 70px);
     border-right: 1px solid var(--border-glass);
 }
 
@@ -834,8 +837,9 @@ body.cluster-closing::before {
 
 .service-content-panel {
     flex: 0 0 65%;
-    background-color: var(--terracotta);
-    padding: 110px 80px 80px 80px;
+    background: linear-gradient(rgba(196, 104, 40, 0.85), rgba(196, 104, 40, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
+    background-size: cover;
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 80px);
     display: flex;
     align-items: center;
 }
@@ -923,12 +927,13 @@ body.cluster-closing::before {
     grid-template-columns: 1.155fr 0.845fr;
     width: 100%;
     height: 100%;
-    background-color: var(--terracotta);
+    background: linear-gradient(rgba(196, 104, 40, 0.85), rgba(196, 104, 40, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
+    background-size: cover;
 }
 
 .service-card-panel {
     border-right: 1px solid var(--border-glass);
-    padding: 110px 80px 80px 80px;
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 80px);
     overflow-y: auto;
     position: relative;
 }
