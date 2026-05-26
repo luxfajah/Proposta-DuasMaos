@@ -499,14 +499,18 @@ body.cluster-closing::before {
 }
 
 .thacy-panel {
-    background-color: var(--alabaster);
-    color: var(--slate);
+    background-color: var(--slate);
+    color: var(--alabaster);
 }
 
 .thacy-title {
     font-size: 4.5rem;
-    color: var(--terracotta);
+    color: var(--gold);
     margin-bottom: 16px;
+}
+
+.thacy-panel .section-body strong {
+    color: var(--gold);
 }
 
 .section-body {
@@ -560,10 +564,11 @@ body.cluster-closing::before {
 
 .member-frame {
     width: 100%;
+    max-width: 180px;
+    margin: 0 auto 16px auto;
     aspect-ratio: 3/4;
     border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 16px;
     border: 1px solid rgba(255, 255, 252, 0.15);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -601,7 +606,7 @@ body.cluster-closing::before {
 .quote-panel {
     flex: 0 0 30%;
     height: 100%;
-    padding: 100px 40px 60px 60px;
+    padding: 100px 60px 60px 100px;
     display: flex;
     align-items: center;
     background-color: var(--slate);
@@ -724,14 +729,28 @@ body.cluster-closing::before {
 
 /* Backgrounds específicos de slides (Sem espaços pretos) */
 #slide-6 {
-    background-image: url('assets/metodologia_bg.png');
+    background-image: linear-gradient(rgba(10, 8, 15, 0.7), rgba(10, 8, 15, 0.7)), url('assets/Imagens para fundo/marcelo-leal-ntiKxAdmQX8-unsplash.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-#slide-7, #slide-8, #slide-9 {
-    background-image: url('assets/servicos_bg.png');
+#slide-7 {
+    background-image: linear-gradient(rgba(10, 8, 15, 0.7), rgba(10, 8, 15, 0.7)), url('assets/Imagens para fundo/beto-galetto-JM0ZC9j31iE-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#slide-8 {
+    background-image: linear-gradient(rgba(10, 8, 15, 0.7), rgba(10, 8, 15, 0.7)), url('assets/Imagens para fundo/henry-rodrigues-vBfpuAN8MXw-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#slide-9 {
+    background-image: linear-gradient(rgba(10, 8, 15, 0.75), rgba(10, 8, 15, 0.75)), url('assets/Imagens para fundo/zachary-kadolph-lUgbLl69MCY-unsplash.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -784,20 +803,21 @@ body.cluster-closing::before {
 }
 
 .laptops-container {
-    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
 }
 
 .laptop {
-    position: absolute;
-    width: 270px;
+    position: relative;
+    width: 31%;
+    max-width: 260px;
     transition: var(--transition-premium);
 }
-
-.laptop-1 { top: 12%; right: 5%; z-index: 1; }
-.laptop-2 { bottom: 12%; right: 12%; z-index: 3; }
-.laptop-3 { top: 32%; left: 5%; z-index: 2; }
 
 .laptop-screen {
     width: 100%;
@@ -1012,7 +1032,7 @@ body.cluster-closing::before {
     max-width: 85%;
     max-height: 75%;
     object-fit: contain;
-    filter: grayscale(1) brightness(1.5) opacity(0.5);
+    filter: opacity(0.75);
     transition: var(--transition-premium);
 }
 
@@ -1023,7 +1043,7 @@ body.cluster-closing::before {
 }
 
 .brand-logo-card:hover img {
-    filter: grayscale(0) brightness(1) opacity(1);
+    filter: opacity(1);
     transform: scale(1.08);
 }
 
@@ -1226,12 +1246,19 @@ body.cluster-closing::before {
     background-color: #79577a;
 }
 
-.brand-icon-gabrielly {
-    height: 60px;
-}
-.brand-icon-gabrielly img {
-    height: 100%;
+.showcase-brand-logo {
+    height: 55px;
+    max-width: 220px;
     object-fit: contain;
+    display: block;
+}
+
+.brand-folle-1 {
+    background-color: #434947;
+}
+
+.brand-folle-2 {
+    background-color: #4a453f;
 }
 
 .showcase-gallery-tri {
@@ -1277,57 +1304,94 @@ body.cluster-closing::before {
 }
 
 /* J. Investimento Estático (Slide 17) */
-.pricing-layout {
+/* J. Investimento Estático Redesenhado (Slide 17) */
+.investment-premium-layout {
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: var(--terracotta);
+    padding: 110px 80px 80px 80px;
     position: relative;
+    overflow: hidden;
 }
 
-.pricing-card {
-    width: min(580px, 90%);
+.investment-header {
+    text-align: center;
+    margin-bottom: 40px;
+    z-index: 5;
+}
+
+.investment-subtitle {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.investment-title {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--alabaster);
+}
+
+.investment-container {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    gap: 40px;
+    max-width: 1100px;
+    width: 100%;
+    z-index: 5;
+}
+
+.investment-card {
     background: var(--bg-glass-dark);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid var(--border-glass-glow);
-    border-radius: 24px;
-    padding: clamp(25px, 4vh, 50px);
-    box-shadow: 0 45px 90px rgba(0, 0, 0, 0.5);
-    z-index: 5;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 45px 90px rgba(0, 0, 0, 0.4);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .pricing-card-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.5rem, 3.5vh, 2.2rem);
+    font-size: clamp(1.4rem, 3.2vh, 1.8rem);
     font-weight: 800;
     color: var(--alabaster);
-    margin-bottom: clamp(15px, 3vh, 30px);
+    margin-bottom: clamp(15px, 2.5vh, 25px);
 }
 
-/* Estilização Premium para o Valor Estático XXXXXX */
 .pricing-value-box {
     display: flex;
     align-items: baseline;
     justify-content: center;
     gap: 10px;
-    margin-bottom: clamp(15px, 3vh, 35px);
+    margin-bottom: clamp(15px, 2.5vh, 30px);
     animation: pulseGlow 3s infinite ease-in-out;
 }
 
 .price-currency {
     font-family: var(--font-sans);
-    font-size: clamp(1.5rem, 3.5vh, 2.2rem);
+    font-size: clamp(1.4rem, 3.2vh, 1.8rem);
     font-weight: 500;
-    color: var(--terracotta);
+    color: var(--gold);
 }
 
 .price-amount {
     font-family: var(--font-heading);
-    font-size: clamp(3rem, 10vh, 5.5rem);
+    font-size: clamp(2.8rem, 8vh, 4.5rem);
     font-weight: 800;
     color: var(--gold);
     line-height: 1;
@@ -1335,14 +1399,66 @@ body.cluster-closing::before {
 }
 
 .pricing-text-details {
-    font-size: clamp(0.9rem, 2vh, 1.15rem);
-    line-height: 1.65;
+    font-size: clamp(0.85rem, 1.8vh, 1rem);
+    line-height: 1.6;
     color: var(--alabaster);
     opacity: 0.9;
     max-width: 480px;
     margin: 0 auto;
     border-top: 1px solid rgba(255, 255, 252, 0.1);
-    padding-top: clamp(15px, 2.5vh, 25px);
+    padding-top: clamp(15px, 2vh, 20px);
+}
+
+.investment-details-card {
+    background: rgba(255, 255, 252, 0.05);
+    border: 1px solid rgba(255, 255, 252, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.details-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 252, 0.1);
+    padding-bottom: 12px;
+}
+
+.details-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.details-list li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.details-icon {
+    color: var(--gold);
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.details-text strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--alabaster);
+    margin-bottom: 4px;
+}
+
+.details-text span {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 252, 0.75);
+    line-height: 1.4;
+    display: block;
 }
 
 @keyframes pulseGlow {
@@ -1351,11 +1467,15 @@ body.cluster-closing::before {
 }
 
 /* K. Slide de Encerramento (Slide 18) */
+#slide-18 {
+    background-color: var(--slate) !important;
+}
+
 .closing-panel {
-    background-color: var(--slate);
+    background-color: transparent;
     color: var(--alabaster);
     flex: 0 0 48%;
-    padding: 120px 80px 80px 80px;
+    padding: 120px 80px 120px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1422,6 +1542,44 @@ body.cluster-closing::before {
     opacity: 0;
     transform: translateY(25px);
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Doodles Animados Decorativos */
+.vector-doodle {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.doodle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.doodle-float-1 {
+    top: 12%;
+    left: 6%;
+    animation: floatSmooth 8s ease-in-out infinite;
+}
+
+.doodle-float-2 {
+    bottom: 12%;
+    right: 6%;
+    animation: spinSlow 28s linear infinite;
+}
+
+@keyframes floatSmooth {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(8deg); }
+}
+
+@keyframes spinSlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .slide-section.in-view .reveal-text {
@@ -1678,10 +1836,13 @@ body.cluster-closing::before {
     .services-split-layout {
         grid-template-columns: 1fr;
         overflow-y: auto;
+        height: 100%;
     }
     
     .service-card-panel {
-        padding: 24px;
+        padding: 40px 24px;
+        height: auto;
+        overflow-y: visible;
         border-right: none;
         border-bottom: 1px solid var(--border-glass);
     }
@@ -1711,13 +1872,28 @@ body.cluster-closing::before {
         gap: 12px;
     }
     
-    .pricing-card {
-        width: 90%;
-        padding: 25px;
+    /* Responsividade Investimento */
+    .investment-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-height: calc(100vh - 250px);
+        overflow-y: auto;
+    }
+    
+    .investment-premium-layout {
+        padding: 90px 24px 60px 24px;
+    }
+    
+    .investment-title {
+        font-size: 2.2rem;
+    }
+    
+    .investment-card, .investment-details-card {
+        padding: 24px;
     }
     
     .price-amount {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
     
     .pagination-container {
