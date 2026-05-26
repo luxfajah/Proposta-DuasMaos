@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duas Mãos - Proposta Comercial</title>
+    <meta name="description" content="Apresentação da proposta comercial e identidade visual da Duas Mãos. Explore nossos serviços, metodologia e portfólio em uma experiência interativa premium.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link para o arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Tela de Carregamento Inicial -->
+    <div id="app-loader" class="app-loader">
+        <div class="loader-content">
+            <img src="logo duas maos.svg" class="loader-logo-img" alt="Logo Duas Mãos">
+            <div class="loader-spinner"></div>
+            <p class="loader-subtitle">Carregando website da proposta...</p>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Botões de Navegação Lateral -->
+    <button id="nav-btn-prev" class="nav-arrow nav-arrow-prev" aria-label="Slide anterior" disabled>
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </button>
+    <button id="nav-btn-next" class="nav-arrow nav-arrow-next" aria-label="Próximo slide">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </button>
+
+    <!-- Container Principal de Rolagem Horizontal -->
+    <main id="slider-container" class="slider-container">
+        
+        <!-- Slide 1: Capa -->
+        <section class="slide-section cluster-branding active-slide" id="slide-1" data-index="1">
+            <div class="slide-content cover-layout">
+                <div class="cover-photo-container">
+                    <img class="cover-photo" src="assets/1_img_2.jpg" alt="Equipe Duas Mãos">
+                    <span class="cover-date">MAIO/2026</span>
+                    <div class="cover-logo-wrapper">
+                        <img src="logo duas maos.svg" class="cover-logo-img" alt="Logo Duas Mãos">
+                        <span class="logo-sub">expressão de marca</span>
+                    </div>
+                </div>
+                <h1 class="cover-title reveal-text">proposta</h1>
+            </div>
+        </section>
+
+        <!-- Slide 2: Manifesto -->
+        <section class="slide-section cluster-branding" id="slide-2" data-index="2">
+            <div class="slide-content split-layout">
+                <div class="split-left photo-panel">
+                    <img src="assets/2_img_3.jpg" alt="Manifesto Visual" class="panel-img">
+                </div>
+                <div class="split-right text-panel manifesto-panel">
+                    <div class="vector-loop loop-green-manifesto">
+                        <svg viewBox="0 0 200 200" fill="none" stroke="rgba(20, 184, 166, 0.15)" stroke-width="8" stroke-linecap="round">
+                            <path d="M30,120 C30,30 170,30 170,120 C170,210 30,210 30,120 Z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="section-title reveal-text">Se você se expressa, a sua marca no mundo acontece.</h2>
+                    <div class="section-body fade-in-up">
+                        <p><strong>A Duas Mãos</strong> é um estúdio de comunicação e negócios que caminha ao lado de profissionais que acreditam que o marketing agressivo não precisa ser o único caminho para o desenvolvimento de marcas.</p>
+                        <p>Por isso, aqui, estratégia e criação caminham juntas para que a sua marca, pessoal ou institucional, possa se expressar com inteligência, constância e criatividade todos os dias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Thacy Bio -->
+        <section class="slide-section cluster-branding" id="slide-3" data-index="3">
+            <div class="slide-content split-layout reverse">
+                <div class="split-left photo-panel">
+                    <img src="assets/3_img_2.png" alt="Thacy" class="panel-img shadow-premium">
+                </div>
+                <div class="split-right text-panel thacy-panel">
+                    <div class="vector-loop loop-green-thacy">
+                        <svg viewBox="0 0 200 200" fill="none" stroke="rgba(139, 92, 246, 0.15)" stroke-width="8" stroke-linecap="round">
+                            <path d="M170,80 C170,170 30,170 30,80 C30,-10 170,-10 170,80 Z"></path>
+                        </svg>
+                    </div>
+                    <span class="section-subtitle">Prazer, eu sou a</span>
+                    <h2 class="thacy-title section-title reveal-text">Thacy</h2>
+                    <div class="section-body fade-in-up">
+                        <p>Especialista em desenvolvimento de negócios e comunicação, criadora de uma metodologia própria, o <strong>Cápsula Lab</strong>, que une estratégia, criatividade e clareza para impulsionar marcas e projetos. Já atuou com empreendedores, profissionais liberais e empresas no Brasil, nos Estados Unidos e na Europa.</p>
+                        <p>Palestrante convidada em eventos de relevância internacional, como a <strong>FBV – Feira Brasileira do Varejo</strong> e o <strong>World Creativity Day</strong>, Thacy fala sobre criatividade aplicada, gestão de negócios, estratégia e comunicação. Seu estilo é direto, inteligente e humano, sempre mostrando que marcas são organismos vivos e que negócios precisam de clareza para crescer. Vamos juntas?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Equipe -->
+        <section class="slide-section cluster-branding" id="slide-4" data-index="4">
+            <div class="slide-content team-layout">
+                <h2 class="section-title text-center reveal-text">Quem estará com você?</h2>
+                <div class="team-grid">
+                    <div class="team-member fade-in-up" style="animation-delay: 0.1s">
+                        <div class="member-frame">
+                            <img src="assets/4_img_4.png" alt="Awdrey" class="member-img">
+                        </div>
+                        <h3 class="member-name">Awdrey</h3>
+                        <p class="member-role">Designer</p>
+                    </div>
+                    <div class="team-member fade-in-up" style="animation-delay: 0.2s">
+                        <div class="member-frame">
+                            <img src="assets/4_img_3.png" alt="Lux" class="member-img">
+                        </div>
+                        <h3 class="member-name">Lux</h3>
+                        <p class="member-role">Designer</p>
+                    </div>
+                    <div class="team-member fade-in-up" style="animation-delay: 0.3s">
+                        <div class="member-frame">
+                            <img src="assets/4_img_2.png" alt="Thiago" class="member-img">
+                        </div>
+                        <h3 class="member-name">Thiago</h3>
+                        <p class="member-role">Webdesigner</p>
+                    </div>
+                    <div class="team-member fade-in-up" style="animation-delay: 0.4s">
+                        <div class="member-frame">
+                            <img src="assets/4_img_1.jpg" alt="Caio" class="member-img">
+                        </div>
+                        <h3 class="member-name">Caio</h3>
+                        <p class="member-role">Atendimento</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Filosofia e Redes -->
+        <section class="slide-section cluster-branding" id="slide-5" data-index="5">
+            <div class="slide-content split-layout">
+                <div class="split-left quote-panel">
+                    <div class="vector-loop loop-gold-philosophy">
+                        <svg viewBox="0 0 200 200" fill="none" stroke="rgba(245, 158, 11, 0.15)" stroke-width="8" stroke-linecap="round">
+                            <path d="M50,50 Q100,150 150,50 T150,150" />
+                        </svg>
+                    </div>
+                    <blockquote class="brand-quote reveal-text">
+                        "Assim como o desenvolvimento de uma carreira, acreditamos na comunicação de um negócio como algo que se constrói diariamente, exigindo consistência e coragem."
+                    </blockquote>
+                </div>
+                <div class="split-right socials-panel">
+                    <div class="socials-grid">
+                        <div class="instagram-card fade-in-up" style="animation-delay: 0.1s">
+                            <div class="insta-header">
+                                <img src="assets/5_img_3.jpg" class="insta-avatar" alt="Avatar">
+                                <span class="insta-username">palcointeligencia</span>
+                            </div>
+                            <div class="insta-img-container">
+                                <img src="assets/5_img_2.jpg" class="insta-img" alt="Post">
+                            </div>
+                            <div class="insta-footer">
+                                <button class="insta-like-btn" data-liked="false">❤ <span class="like-count">142</span></button>
+                                <span class="insta-icon-bookmark">📥</span>
+                            </div>
+                        </div>
+                        <div class="instagram-card fade-in-up" style="animation-delay: 0.2s">
+                            <div class="insta-header">
+                                <img src="assets/5_img_6.jpg" class="insta-avatar" alt="Avatar">
+                                <span class="insta-username">rapha.alme</span>
+                            </div>
+                            <div class="insta-img-container">
+                                <img src="assets/5_img_5.jpg" class="insta-img" alt="Post">
+                            </div>
+                            <div class="insta-footer">
+                                <button class="insta-like-btn" data-liked="false">❤ <span class="like-count">88</span></button>
+                                <span class="insta-icon-bookmark">📥</span>
+                            </div>
+                        </div>
+                        <div class="instagram-card fade-in-up" style="animation-delay: 0.3s">
+                            <div class="insta-header">
+                                <img src="assets/5_img_8.jpg" class="insta-avatar" alt="Avatar">
+                                <span class="insta-username">amandarasoares</span>
+                            </div>
+                            <div class="insta-img-container">
+                                <img src="assets/5_img_7.jpg" class="insta-img" alt="Post">
+                            </div>
+                            <div class="insta-footer">
+                                <button class="insta-like-btn" data-liked="false">❤ <span class="like-count">215</span></button>
+                                <span class="insta-icon-bookmark">📥</span>
+                            </div>
+                        </div>
+                        <div class="instagram-card fade-in-up" style="animation-delay: 0.4s">
+                            <div class="insta-header">
+                                <img src="assets/5_img_4.jpg" class="insta-avatar" alt="Avatar">
+                                <span class="insta-username">rapha.alme</span>
+                            </div>
+                            <div class="insta-img-container">
+                                <img src="assets/5_img_11.jpg" class="insta-img" alt="Post">
+                            </div>
+                            <div class="insta-footer">
+                                <button class="insta-like-btn" data-liked="false">❤ <span class="like-count">194</span></button>
+                                <span class="insta-icon-bookmark">📥</span>
+                            </div>
+                        </div>
+                        <div class="instagram-card fade-in-up" style="animation-delay: 0.5s">
+                            <div class="insta-header">
+                                <img src="assets/5_img_10.jpg" class="insta-avatar" alt="Avatar">
+                                <span class="insta-username">amanda_tronco</span>
+                            </div>
+                            <div class="insta-img-container">
+                                <img src="assets/5_img_9.jpg" class="insta-img" alt="Post">
+                            </div>
+                            <div class="insta-footer">
+                                <button class="insta-like-btn" data-liked="false">❤ <span class="like-count">167</span></button>
+                                <span class="insta-icon-bookmark">📥</span>
+                            </div>
+                        </div>
+                        <div class="instagram-card fade-in-up" style="animation-delay: 0.6s">
+                            <div class="insta-header">
+                                <img src="assets/5_img_12.jpg" class="insta-avatar" alt="Avatar">
+                                <span class="insta-username">amanda_tronco</span>
+                            </div>
+                            <div class="insta-img-container">
+                                <img src="assets/5_img_13.jpg" class="insta-img" alt="Post">
+                            </div>
+                            <div class="insta-footer">
+                                <button class="insta-like-btn" data-liked="false">❤ <span class="like-count">231</span></button>
+                                <span class="insta-icon-bookmark">📥</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Metodologia e Websites -->
+        <section class="slide-section cluster-services" id="slide-6" data-index="6">
+            <div class="slide-content split-layout">
+                <div class="split-left text-panel methodology-text">
+                    <h2 class="section-title reveal-text">Na prática, não acreditamos e não defendemos fórmulas mágicas.</h2>
+                    <div class="section-body fade-in-up">
+                        <p>Porque elas simplesmente não existem.</p>
+                        <p>Por isso, nossos serviços foram organizados em três categorias que refletem o ciclo completo do que defendemos para uma marca.</p>
+                    </div>
+                    <div class="badge-active fade-in-up">
+                        <div class="rotating-badge">✦</div>
+                        <div class="badge-text">
+                            <strong>Clientes ativos</strong> no Brasil, Europa e EUA<br>
+                            <strong>+ de 30 contratos ativos</strong> nas redes sociais!
+                        </div>
+                    </div>
+                </div>
+                <div class="split-right mockups-panel">
+                    <div class="laptops-container">
+                        <div class="laptop laptop-1 fade-in-up" style="animation-delay: 0.1s">
+                            <div class="laptop-screen"><img src="assets/6_img_3.png" alt="Website Mockup 1"></div>
+                            <div class="laptop-base"></div>
+                        </div>
+                        <div class="laptop laptop-2 fade-in-up" style="animation-delay: 0.3s">
+                            <div class="laptop-screen"><img src="assets/6_img_4.png" alt="Website Mockup 2"></div>
+                            <div class="laptop-base"></div>
+                        </div>
+                        <div class="laptop laptop-3 fade-in-up" style="animation-delay: 0.5s">
+                            <div class="laptop-screen"><img src="assets/6_img_5.jpg" alt="Website Mockup 3"></div>
+                            <div class="laptop-base"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Serviços - Expressão de Marca -->
+        <section class="slide-section cluster-services" id="slide-7" data-index="7">
+            <div class="slide-content split-layout">
+                <div class="split-left service-title-panel">
+                    <span class="service-arrow-large">↗</span>
+                    <h2 class="section-title reveal-text">Esse é o nosso ecossistema de serviços</h2>
+                </div>
+                <div class="split-right service-content-panel">
+                    <div class="service-card-main fade-in-up">
+                        <div class="card-badge">Área Expressão de Marca</div>
+                        <ul class="service-list">
+                            <li>
+                                <h3>Consultoria em Branding <span class="arrow-indicator">↗</span></h3>
+                                <p>Clareza estratégica, território de marca, diferenciação, arquétipos, narrativa central e tom de voz. Te ajudamos a construir uma marca com alma, propósito e direção, que se sustenta no tempo.</p>
+                            </li>
+                            <li>
+                                <h3>Planejamento de Comunicação <span class="arrow-indicator">↗</span></h3>
+                                <p>Organização estratégica de presença, calendário, campanhas e ações. É o mapa que mostra onde a marca precisa estar e o que ela precisa fazer para crescer com consistência.</p>
+                            </li>
+                            <li>
+                                <h3>Gerenciamento de Redes Sociais <span class="arrow-indicator">↗</span></h3>
+                                <p>Estratégia, criação e gestão completa da presença digital. Transformamos conteúdo em posicionamento, narrativa em valor e constância em autoridade.</p>
+                            </li>
+                            <li>
+                                <h3>Identidade Visual <span class="arrow-indicator">↗</span></h3>
+                                <p>Criamos identidades sólidas, memoráveis e alinhadas ao posicionamento que a marca quer ocupar no mercado.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Serviços - Materiais e Aprendizagem -->
+        <section class="slide-section cluster-services" id="slide-8" data-index="8">
+            <div class="slide-content services-split-layout">
+                <div class="service-card-panel fade-in-up" style="animation-delay: 0.1s">
+                    <div class="card-badge">Área Materiais de Marca</div>
+                    <ul class="service-list">
+                        <li>
+                            <h3>Criação de apresentação institucional <span class="arrow-indicator">↗</span></h3>
+                            <p>Apresentações que contam histórias, posicionam e mostram o valor da marca com clareza, estratégia e estética impecável.</p>
+                        </li>
+                        <li>
+                            <h3>Desenvolvimento de ebooks e materiais digitais <span class="arrow-indicator">↗</span></h3>
+                            <p>Materiais profundos, autorais e bem construídos, para gerar valor, captar leads e fortalecer a posição da marca no mercado.</p>
+                        </li>
+                        <li>
+                            <h3>Desenvolvimento de Sites <span class="arrow-indicator">↗</span></h3>
+                            <p>Linguagem estratégica + design inteligente + experiência fluida para deixar claro por que o seu trabalho importa.</p>
+                        </li>
+                        <li>
+                            <h3>Vídeos Estratégicos <span class="arrow-indicator">↗</span></h3>
+                            <p>Roteiro, gravação e edição, ou seja, vídeos que não são só bonitos, mas são funcionais, intencionais e alinhados ao posicionamento da marca.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service-card-panel fade-in-up" style="animation-delay: 0.3s">
+                    <div class="card-badge">Área Experiências de Aprendizagem</div>
+                    <ul class="service-list">
+                        <li>
+                            <h3>Treinamentos em Atendimento <span class="arrow-indicator">↗</span></h3>
+                            <p>Treinamos equipes para que o atendimento seja um ponto de diferenciação, não um gargalo.</p>
+                        </li>
+                        <li>
+                            <h3>Treinamentos Comerciais e de Vendas <span class="arrow-indicator">↗</span></h3>
+                            <p>Fortalecemos times e profissionais que precisam vender com naturalidade, ética e conexão.</p>
+                        </li>
+                    </ul>
+                    <div class="brand-graphic-corner">
+                        <img src="assets/8_img_2.png" alt="Logotipo Duas Mãos" class="graphic-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Clientes -->
+        <section class="slide-section cluster-services" id="slide-9" data-index="9">
+            <div class="slide-content brands-layout">
+                <h2 class="section-title text-center reveal-text">Algumas das marcas que já trabalhamos:</h2>
+                <div class="brands-grid">
+                    <div class="brand-logo-card fade-in-up" style="animation-delay: 0.05s"><img src="assets/9_img_11.png" alt="TAG"></div>
+                    <div class="brand-logo-card fade-in-up" style="animation-delay: 0.1s"><img src="assets/9_img_2.png" alt="Sicredi"></div>
+                    <div class="brand-logo-card fade-in-up" style="animation-delay: 0.15s"><img src="assets/9_img_13.png" alt="Minas Propósito"></div>
+                    <div class="brand-logo-card fade-in-up" style="animation-delay: 0.2s"><img src="assets/9_img_14.png" alt="Digio"></div>
+                    <div class="brand-logo-card fade-in-up" style="animation-delay: 0.25s"><img src="assets/9_img_5.png" alt="Blend Edu"></div>
+                    <div class="brand-logo-card fade-in-up" style="animation-delay: 0.3s"><img src="assets/9_img_16.png" alt="Amazonas"></div>
+                    <div class="brand-logo-card fade-in-up" style="animation-delay: 0.35s"><img src="assets/9_img_17.png" alt="Abero & Vieira"></div>
+                    <div class="brand-logo-card fade-in-up" style="animation-delay: 0.4s"><img src="assets/9_img_19.png" alt="Palco"></div>
+                    <div class="brand-logo-card fade-in-up" style="animation-delay: 0.45s"><img src="assets/9_img_15.png" alt="Rava e Santa Maria"></div>
+                    <div class="brand-logo-card fade-in-up" style="animation-delay: 0.5s"><img src="assets/9_img_18.png" alt="Rangel Contabilidade"></div>
+                </div>
+                <div class="vector-loop loop-gold-brands">
+                    <svg viewBox="0 0 100 100" fill="none" stroke="rgba(245, 158, 11, 0.1)" stroke-width="5">
+                        <circle cx="50" cy="50" r="40" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Capa Identidade Visual -->
+        <section class="slide-section cluster-portfolio" id="slide-10" data-index="10">
+            <div class="slide-content cover-layout bg-dark-overlay">
+                <div class="cover-photo-container grayscale">
+                    <img class="cover-photo" src="assets/10_img_1.jpg" alt="Identidade Visual">
+                </div>
+                <h1 class="cover-title reveal-text">Identidade<br>Visual</h1>
+            </div>
+        </section>
+
+        <!-- Slide 11: Manifesto Identidade Visual -->
+        <section class="slide-section cluster-portfolio" id="slide-11" data-index="11">
+            <div class="slide-content iv-manifest-layout">
+                <div class="logo-header-iv fade-in-up">
+                    <img src="assets/11_img_1.png" alt="Logo" class="logo-iv-icon">
+                </div>
+                <div class="iv-main-box fade-in-up">
+                    <p>Construir uma identidade visual não é apenas criar um logotipo bonito. É organizar visualmente a essência de uma marca para que ela seja reconhecida, lembrada e compreendida pelo público certo.</p>
+                    <p class="secondary-text">Na Duas Mãos, esse processo acontece de forma estruturada, combinando estratégia e sensibilidade criativa para transformar ideias, valores e posicionamento em uma presença visual coerente e profissional. Para garantir consistência e profundidade no processo, o desenvolvimento da identidade visual acontece em duas etapas:</p>
+                </div>
+                <div class="iv-steps-grid">
+                    <div class="iv-step-card fade-in-up" style="animation-delay: 0.1s">
+                        <h3>Etapa 1 — Clareza Estratégica</h3>
+                        <p>Antes de desenhar qualquer elemento visual, é fundamental compreender profundamente a marca. Nesta fase, investigamos o contexto do negócio, a trajetória da profissional, o que realmente diferencia essa marca no mercado. É o momento de organizar ideias, identificar valores e entender com clareza para quem essa marca fala.</p>
+                        <div class="step-deliveries">
+                            <strong>Entregas:</strong>
+                            <ul>
+                                <li>Diagnóstico do contexto atual da marca</li>
+                                <li>Imersão na história e essência da profissional/negócio</li>
+                                <li>Mapeamento de persona (público real e desejado)</li>
+                                <li>Análise de concorrência e referências</li>
+                                <li>Identificação de diferenciais estratégicos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="iv-step-card fade-in-up" style="animation-delay: 0.3s">
+                        <h3>Etapa 2 — Arquitetura Visual da Marca</h3>
+                        <p>Com a estratégia definida, passamos para a tradução visual da marca. Aqui, cada elemento é pensado para comunicar o posicionamento definido anteriormente. Cores, tipografia e logotipo deixam de ser escolhas apenas estéticas e passam a compor um sistema visual consistente, capaz de transmitir valores, gerar reconhecimento e fortalecer a presença.</p>
+                        <div class="step-deliveries">
+                            <strong>Entregas:</strong>
+                            <ul>
+                                <li>Logotipo principal e variações</li>
+                                <li>Definição tipográfica da marca</li>
+                                <li>Paleta de cores estratégica</li>
+                                <li>Desenvolvimento de até 5 materiais de marca de acordo com necessidade</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Portfólio 1 - Gabriela Saueressig -->
+        <section class="slide-section cluster-portfolio" id="slide-12" data-index="12">
+            <div class="slide-content showcase-layout brand-gabriela">
+                <div class="showcase-header fade-in-up">
+                    <div class="brand-monogram">Gs</div>
+                    <div class="brand-title-box">
+                        <h2>GABRIELA SAUERESSIG</h2>
+                        <p>GINECOLOGIA GERAL E CIRURGIA GINECOLÓGICA</p>
+                    </div>
+                </div>
+                <div class="showcase-gallery">
+                    <div class="gallery-item item-1 fade-in-up" style="animation-delay: 0.1s">
+                        <img src="assets/12_img_1.png" alt="Gabriela Mug Mockup">
+                    </div>
+                    <div class="gallery-item item-2 fade-in-up" style="animation-delay: 0.2s">
+                        <img src="assets/12_img_2.png" alt="Gabriela Portrait">
+                    </div>
+                    <div class="gallery-item item-3 fade-in-up" style="animation-delay: 0.3s">
+                        <img src="assets/12_img_4.png" alt="Gabriela Tote Bag Mockup">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Portfólio 2 - Gabrielly Lima -->
+        <section class="slide-section cluster-portfolio" id="slide-13" data-index="13">
+            <div class="slide-content showcase-layout brand-gabrielly">
+                <div class="showcase-header fade-in-up">
+                    <div class="brand-icon-gabrielly">
+                        <img src="assets/13_img_5.png" alt="Cloud Icon">
+                    </div>
+                    <div class="brand-title-box">
+                        <h2>Gabrielly Lima</h2>
+                        <p>PSICÓLOGA CLÍNICA</p>
+                    </div>
+                </div>
+                <div class="showcase-gallery-tri">
+                    <div class="gallery-item item-pink fade-in-up" style="animation-delay: 0.1s">
+                        <img src="assets/13_img_6.png" alt="Gabrielly Notes">
+                    </div>
+                    <div class="gallery-item item-door fade-in-up" style="animation-delay: 0.2s">
+                        <img src="assets/13_img_7.png" alt="Gabrielly Door Hanger">
+                    </div>
+                    <div class="gallery-item item-notebooks fade-in-up" style="animation-delay: 0.3s">
+                        <img src="assets/13_img_9.png" alt="Gabrielly Notebooks">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 14: Portfólio 3 - Folle Billboard -->
+        <section class="slide-section cluster-portfolio" id="slide-14" data-index="14">
+            <div class="slide-content showcase-layout billboard-layout">
+                <div class="billboard-frame fade-in-up">
+                    <img src="assets/14_img_1.png" alt="Folle Arquitetura Billboard" class="billboard-img">
+                    <div class="billboard-shadow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 15: Portfólio 4 - Folle Manual -->
+        <section class="slide-section cluster-portfolio" id="slide-15" data-index="15">
+            <div class="slide-content showcase-layout manual-layout">
+                <div class="manual-frame fade-in-up">
+                    <img src="assets/15_img_1.png" alt="Folle Brand Guide" class="manual-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 16: Capa Investimento -->
+        <section class="slide-section cluster-closing" id="slide-16" data-index="16">
+            <div class="slide-content cover-layout bg-dark-overlay">
+                <div class="cover-photo-container grayscale">
+                    <img class="cover-photo" src="assets/16_img_1.jpg" alt="Investimento">
+                </div>
+                <h1 class="cover-title reveal-text">Investimento</h1>
+            </div>
+        </section>
+
+        <!-- Slide 17: Investimento -->
+        <section class="slide-section cluster-closing" id="slide-17" data-index="17">
+            <div class="slide-content pricing-layout">
+                <div class="vector-loop loop-green-pricing">
+                    <svg viewBox="0 0 200 200" fill="none" stroke="rgba(20, 184, 166, 0.1)" stroke-width="6">
+                        <path d="M20,100 Q100,20 180,100 T180,180" />
+                    </svg>
+                </div>
+                <div class="pricing-card fade-in-up">
+                    <h2 class="pricing-card-title">O que você prefere?</h2>
+                    
+                    <div class="pricing-value-box">
+                        <span class="price-currency">R$</span>
+                        <span class="price-amount">XXXXXX</span>
+                    </div>
+
+                    <div class="pricing-text-details">
+                        Pagamento: pix ou parcelado em até 12x nos cartões normais ou 24x no cartão Nubank (sujeito a juros).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 18: Fechamento -->
+        <section class="slide-section cluster-closing" id="slide-18" data-index="18">
+            <div class="slide-content split-layout">
+                <div class="split-left closing-panel">
+                    <p class="closing-text reveal-text">
+                        Com estratégia e sensibilidade, ajudamos você a revelar o que só você e a sua marca têm. E a contar isso para o mundo do seu jeito. Porque quando você se expressa, a marca acontece. E quando a marca acontece, os caminhos se abrem, as conversas se acendem e as portas se abrem.
+                    </p>
+                    <div class="closing-cta-box fade-in-up">
+                        <h2 class="closing-title">Vamos juntos?</h2>
+                        <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20conversar%20sobre%20a%20proposta%20comercial%20da%20Duas%20Mãos." id="btn-whatsapp-large" class="btn-whatsapp-large" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966C16.79 1.977 14.33 1.002 11.999 1c-5.444 0-9.873 4.38-9.877 9.808-.002 1.76.474 3.479 1.38 5.02L2.503 21.5l6.144-1.614zM17.89 14.7c-.3-.15-1.78-.88-2.06-.98-.28-.1-.49-.15-.69.15-.2.3-.78.98-.96 1.18-.18.2-.36.23-.66.08-.3-.15-1.27-.47-2.42-1.5-1-.89-1.67-1.99-1.87-2.33-.2-.3-.02-.47.13-.62.14-.13.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.07-.15-.69-1.67-.95-2.29-.25-.61-.51-.53-.69-.54-.18-.01-.39-.01-.6-.01-.21 0-.55.08-.84.4-.29.32-1.12 1.09-1.12 2.67 0 1.58 1.15 3.11 1.31 3.32.16.2 2.26 3.46 5.48 4.85.77.33 1.37.53 1.84.68.78.25 1.48.21 2.04.13.62-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.17-1.43-.08-.13-.28-.21-.58-.36z"/>
+                            </svg>
+                            Iniciar Conversa por WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="split-right photo-panel poster-panel">
+                    <img src="assets/18_img_1.jpg" alt="Cartazes de Identidade" class="panel-img">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Indicador de Paginação Inferior (Bullets) -->
+    <nav class="pagination-container" aria-label="Navegação de slides">
+        <ul id="pagination-list" class="pagination-list">
+            <!-- Gerado dinamicamente via JS/TS -->
+        </ul>
+        <div id="slide-counter" class="slide-counter">01 / 18</div>
+    </nav>
+
+    <!-- Rodapé de Apoio de Acessibilidade -->
+    <footer class="footer-hint">
+        Use as setas ← → ou scroll do mouse para navegar
+    </footer>
+
+    <!-- Script principal compilado pelo Vite (TypeScript) -->
+    <script type="module" src="src/main.ts"></script>
+</body>
+</html>

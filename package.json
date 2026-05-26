@@ -1,0 +1,23 @@
+{
+  "name": "proposta-duasmaos",
+  "version": "1.0.0",
+  "description": "Website de rolagem horizontal premium para a proposta comercial Duas Mãos",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "horizontal-scroll",
+    "canva",
+    "presentation",
+    "premium-design"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "typescript": "^5.0.0"
+  }
+}

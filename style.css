@@ -1,0 +1,1702 @@
+/* ==========================================================================
+   FOLHA DE ESTILOS PREMIUM - WEBSITE FULLSCREEN PROPOSTA DUAS MÃOS
+   ========================================================================== */
+
+/* 1. VARIÁVEIS DO SISTEMA DE DESIGN & PALETA DE CORES */
+:root {
+    /* Paleta Cromática Real (Extraída dos SVGs) */
+    --bg-dark: #0a080f;
+    --slate: #40455C;
+    --terracotta: #C46828;
+    --alabaster: #FFFCF2;
+    --gold: #FFD56E;
+    --peach: #FFB65F;
+    --white: #ffffff;
+    --black: #000000;
+    
+    /* Cores de Tema Dinâmico */
+    --theme-bg: var(--bg-dark);
+    --theme-text: var(--alabaster);
+    --theme-accent: var(--gold);
+    
+    /* Configurações de Vidro (Glassmorphism) */
+    --bg-glass-light: rgba(255, 255, 255, 0.02);
+    --bg-glass-medium: rgba(64, 69, 92, 0.15);
+    --bg-glass-dark: rgba(10, 8, 15, 0.7);
+    --border-glass: rgba(255, 255, 255, 0.08);
+    --border-glass-glow: rgba(255, 213, 110, 0.15);
+    --shadow-premium: 0 35px 80px rgba(0, 0, 0, 0.5);
+    
+    /* Tipografia */
+    --font-sans: 'Outfit', sans-serif;
+    --font-heading: 'Syne', sans-serif;
+    
+    /* Transições */
+    --transition-premium: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.25s ease;
+}
+
+/* 2. CONFIGURAÇÕES GERAIS E RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Trava rolagem vertical */
+    background-color: var(--bg-dark);
+    color: var(--theme-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Background Dinâmico Interativo (Mesh Gradients) */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(64, 69, 92, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(196, 104, 40, 0.15) 0%, transparent 40%),
+        var(--bg-dark);
+    transition: background 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Modificadores de Temas Conforme os Blocos Ativos */
+body.cluster-branding::before {
+    background: 
+        radial-gradient(circle at 15% 25%, rgba(196, 104, 40, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(64, 69, 92, 0.2) 0%, transparent 45%),
+        var(--bg-dark);
+}
+
+body.cluster-services::before {
+    background: 
+        radial-gradient(circle at 20% 35%, rgba(196, 104, 40, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 80% 65%, rgba(255, 213, 110, 0.08) 0%, transparent 45%),
+        var(--bg-dark);
+}
+
+body.cluster-portfolio::before {
+    background: 
+        radial-gradient(circle at 15% 20%, rgba(64, 69, 92, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(196, 104, 40, 0.1) 0%, transparent 45%),
+        var(--bg-dark);
+}
+
+body.cluster-closing::before {
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 213, 110, 0.1) 0%, transparent 45%),
+        radial-gradient(circle at 70% 70%, rgba(196, 104, 40, 0.15) 0%, transparent 45%),
+        var(--bg-dark);
+}
+
+/* ==========================================================================
+   3. ELEMENTOS DE INTERFACE E CONTROLES (HEADER, NAV, ETC)
+   ========================================================================== */
+
+/* Tela de Carregamento Inicial */
+.app-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+}
+
+.app-loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.03);
+    border-top: 3px solid var(--gold);
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    animation: spin 1s linear infinite;
+}
+
+.loader-logo-img {
+    width: clamp(220px, 30vw, 420px);
+    height: auto;
+    margin-bottom: 30px;
+    filter: invert(1) brightness(2) drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
+    mix-blend-mode: screen;
+}
+
+.loader-subtitle {
+    font-size: 0.875rem;
+    color: var(--slate);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+
+
+/* Cabeçalho Principal (Glassmorphism) */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-glass-dark);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-glass);
+    z-index: 900;
+}
+
+.header-logo {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--alabaster);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.header-logo:hover {
+    text-shadow: 0 0 15px rgba(255, 252, 242, 0.3);
+}
+
+.logo-accent {
+    color: var(--terracotta);
+}
+
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 24px;
+    border-radius: 40px;
+    background: rgba(196, 104, 40, 0.1);
+    border: 1px solid rgba(196, 104, 40, 0.3);
+    color: var(--terracotta);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: var(--transition-fast);
+}
+
+.btn-whatsapp:hover {
+    background: var(--terracotta);
+    color: var(--alabaster);
+    box-shadow: 0 0 25px rgba(196, 104, 40, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Setas de Navegação Lateral */
+.nav-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--bg-glass-dark);
+    border: 1px solid var(--border-glass);
+    color: var(--alabaster);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 850;
+    transition: var(--transition-premium);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-arrow:hover:not(:disabled) {
+    background: var(--terracotta);
+    border-color: var(--terracotta);
+    box-shadow: 0 0 30px rgba(196, 104, 40, 0.4);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-arrow:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.nav-arrow-prev { left: 30px; }
+.nav-arrow-next { right: 30px; }
+
+/* ==========================================================================
+   4. ESTRUTURA DO SLIDER E SEÇÕES FULLSCREEN
+   ========================================================================== */
+
+.slider-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
+}
+
+/* Ocultar scrollbars */
+.slider-container::-webkit-scrollbar { display: none; }
+.slider-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Estrutura de Seção Ocupando 100% da Tela */
+.slide-section {
+    flex: 0 0 100vw;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    position: relative;
+    padding: 0; /* REMOVIDO PADDING - TELA CHEIA COMPLETA */
+}
+
+/* Conteúdo do Slide em Tela Cheia */
+.slide-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0; /* REMOVIDO BORDAS */
+    overflow: hidden;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   5. TEMPLATES DE LAYOUTS DE SLIDES (COMPILADOS)
+   ========================================================================== */
+
+/* A. Layout de Capa (Slide 1, 10, 16) */
+.cover-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0;
+    position: relative;
+}
+
+.cover-photo-container {
+    width: 100%;
+    height: 100%; /* FOTO EM 100% DA ALTURA NO FULLSCREEN */
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.cover-photo-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, var(--bg-dark) 20%, transparent 100%);
+}
+
+.cover-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6) contrast(1.1);
+    transition: transform 10s ease;
+}
+
+.slide-section.active-slide .cover-photo {
+    transform: scale(1.04);
+}
+
+.cover-date {
+    position: absolute;
+    top: clamp(60px, 8vh, 100px);
+    left: clamp(20px, 5vw, 50px);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--alabaster);
+    opacity: 0.8;
+}
+
+.cover-logo-wrapper {
+    position: absolute;
+    top: clamp(60px, 8vh, 100px);
+    right: clamp(20px, 5vw, 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 10;
+}
+
+.cover-logo-img {
+    height: clamp(35px, 6vh, 60px);
+    width: auto;
+    filter: invert(1) brightness(2);
+    mix-blend-mode: screen;
+}
+
+.logo-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 2px;
+}
+
+.cover-title {
+    font-family: var(--font-heading);
+    font-size: 8vw;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--gold);
+    line-height: 1;
+    z-index: 5;
+    margin-left: 80px;
+    margin-bottom: 90px; /* Afastado da paginação inferior */
+    text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.bg-dark-overlay {
+    background-color: var(--bg-dark) !important;
+}
+
+.grayscale img {
+    filter: grayscale(1) brightness(0.4) contrast(1.15) !important;
+}
+
+/* B. Layout de Tela Dividida (Manifesto, Bio, Encerramento) */
+.split-layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.split-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+.photo-panel {
+    flex: 0 0 45%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-right: 1px solid var(--border-glass);
+}
+
+.split-layout.reverse .photo-panel {
+    border-right: none;
+    border-left: 1px solid var(--border-glass);
+}
+
+.panel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.2) brightness(0.85);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-section.active-slide .panel-img {
+    transform: scale(1.03);
+}
+
+.text-panel {
+    flex: 0 0 55%;
+    height: 100%;
+    padding: 120px 90px 90px 90px; /* Paddings protetores no fullscreen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Molduras de Vetor Loop Flutuantes */
+.vector-loop {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    transition: transform 3s ease-out;
+}
+
+.slide-section.active-slide .vector-loop {
+    transform: rotate(15deg) scale(1.05);
+}
+
+.loop-green-manifesto { top: 90px; right: -50px; }
+.loop-green-thacy { bottom: 50px; left: -50px; }
+.loop-gold-philosophy { top: 90px; right: -50px; }
+.loop-green-pricing { bottom: 60px; left: -50px; }
+
+.section-subtitle {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--terracotta);
+    margin-bottom: 10px;
+    z-index: 2;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 24px;
+    z-index: 2;
+}
+
+.manifesto-panel {
+    background-color: var(--terracotta);
+    color: var(--alabaster);
+}
+
+.manifesto-panel .section-title {
+    font-size: 2.8rem;
+    color: var(--alabaster);
+}
+
+.thacy-panel {
+    background-color: var(--alabaster);
+    color: var(--slate);
+}
+
+.thacy-title {
+    font-size: 4.5rem;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+}
+
+.section-body {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    z-index: 2;
+    opacity: 0.9;
+}
+
+.section-body p {
+    margin-bottom: 16px;
+}
+
+.section-body p:last-child {
+    margin-bottom: 0;
+}
+
+.shadow-premium {
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
+
+/* C. Layout de Equipe (Slide 4) */
+.team-layout {
+    width: 100%;
+    height: 100%;
+    padding: 120px 90px 90px 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--terracotta);
+}
+
+.team-layout .section-title {
+    color: var(--alabaster);
+    margin-bottom: 40px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.member-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 252, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.35) contrast(1.1);
+    transition: var(--transition-premium);
+}
+
+.team-member:hover .member-img {
+    filter: grayscale(0) contrast(1);
+    transform: scale(1.06);
+}
+
+.member-name {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--alabaster);
+    margin-bottom: 4px;
+}
+
+.member-role {
+    font-size: 0.88rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* D. Layout de Filosofia / Frase + Instagram (Slide 5) */
+.quote-panel {
+    flex: 0 0 30%;
+    height: 100%;
+    padding: 100px 40px 60px 60px;
+    display: flex;
+    align-items: center;
+    background-color: var(--slate);
+    border-right: 1px solid var(--border-glass);
+}
+
+.brand-quote {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--gold);
+    z-index: 2;
+}
+
+.socials-panel {
+    flex: 0 0 70%;
+    height: 100%;
+    padding: 70px 30px 40px 30px;
+    display: flex;
+    align-items: center;
+    background-color: var(--slate);
+    overflow: hidden;
+}
+
+.socials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+.instagram-card {
+    background: var(--bg-glass-dark);
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    height: calc((100vh - 150px) / 2);
+    width: calc(((100vh - 150px) / 2 - 78px) * 0.8);
+    transition: var(--transition-premium);
+}
+
+.insta-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    height: 40px;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.insta-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.insta-username {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--alabaster);
+}
+
+.insta-img-container {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    flex: 1;
+}
+
+.insta-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-premium);
+}
+
+.instagram-card:hover .insta-img {
+    transform: scale(1.04);
+}
+
+.insta-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    height: 38px;
+    border-top: 1px solid var(--border-glass);
+}
+
+.insta-like-btn {
+    background: none;
+    border: none;
+    color: var(--alabaster);
+    opacity: 0.7;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition-fast);
+}
+
+.insta-like-btn.liked {
+    color: #f43f5e;
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(244, 63, 94, 0.3);
+}
+
+.insta-icon-bookmark {
+    opacity: 0.5;
+}
+
+/* E. Metodologia & Laptops 3D (Slide 6) */
+.methodology-text {
+    background-color: var(--terracotta);
+    color: var(--alabaster);
+    flex: 0 0 45%;
+    border-right: 1px solid var(--border-glass);
+}
+
+.badge-active {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 252, 0.08);
+    border: 1px solid rgba(255, 255, 252, 0.15);
+    padding: 14px 22px;
+    border-radius: 12px;
+    z-index: 2;
+}
+
+.rotating-badge {
+    font-size: 2rem;
+    color: var(--gold);
+    animation: rotateSlow 8s linear infinite;
+}
+
+@keyframes rotateSlow {
+    100% { transform: rotate(360deg); }
+}
+
+.badge-text {
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.mockups-panel {
+    flex: 0 0 55%;
+    background-color: var(--terracotta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 80px 80px 80px;
+}
+
+.laptops-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.laptop {
+    position: absolute;
+    width: 270px;
+    transition: var(--transition-premium);
+}
+
+.laptop-1 { top: 12%; right: 5%; z-index: 1; }
+.laptop-2 { bottom: 12%; right: 12%; z-index: 3; }
+.laptop-3 { top: 32%; left: 5%; z-index: 2; }
+
+.laptop-screen {
+    width: 100%;
+    aspect-ratio: 1.6;
+    background: #000;
+    border-radius: 10px 10px 0 0;
+    border: 6px solid #1c1c1c;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+}
+
+.laptop-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.laptop-base {
+    width: 110%;
+    height: 8px;
+    background: #4e4e4e;
+    border-radius: 0 0 10px 10px;
+    margin-left: -5%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.laptop:hover {
+    z-index: 10;
+    transform: translateY(-12px) scale(1.05);
+}
+
+/* F. Ecossistema de Serviços (Slide 7, 8) */
+.service-title-panel {
+    flex: 0 0 35%;
+    background-color: var(--terracotta);
+    color: var(--alabaster);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 110px 70px 80px 70px;
+    border-right: 1px solid var(--border-glass);
+}
+
+.service-arrow-large {
+    font-size: 6rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 24px;
+}
+
+.service-content-panel {
+    flex: 0 0 65%;
+    background-color: var(--terracotta);
+    padding: 110px 80px 80px 80px;
+    display: flex;
+    align-items: center;
+}
+
+.service-card-main {
+    background-color: var(--slate);
+    border: 1px solid var(--border-glass);
+    border-radius: 18px;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar */
+.service-card-main::-webkit-scrollbar { width: 6px; }
+.service-card-main::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.card-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background-color: var(--gold);
+    color: var(--slate);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+.service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.service-list li {
+    border-bottom: 1px solid rgba(255, 255, 252, 0.06);
+    padding-bottom: 18px;
+}
+
+.service-list li:last-child {
+    border: none;
+    padding-bottom: 0;
+}
+
+.service-list h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--alabaster);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow-indicator {
+    font-size: 0.95rem;
+    color: var(--gold);
+    opacity: 0.5;
+    transition: var(--transition-fast);
+}
+
+.service-list li:hover .arrow-indicator {
+    transform: translateX(4px) translateY(-4px);
+    opacity: 1;
+}
+
+.service-list p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 252, 0.75);
+}
+
+/* Grid de Serviços do Slide 8 */
+.services-split-layout {
+    display: grid;
+    grid-template-columns: 1.155fr 0.845fr;
+    width: 100%;
+    height: 100%;
+    background-color: var(--terracotta);
+}
+
+.service-card-panel {
+    border-right: 1px solid var(--border-glass);
+    padding: 110px 80px 80px 80px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.service-card-panel:last-child {
+    border-right: none;
+}
+
+.brand-graphic-corner {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 200px;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.graphic-logo {
+    width: 100%;
+    height: auto;
+}
+
+/* G. Grid de Marcas Clientes (Slide 9) */
+.brands-layout {
+    width: 100%;
+    height: 100%;
+    padding: 110px 90px 90px 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--slate);
+    position: relative;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+    width: 100%;
+    margin-top: 40px;
+    z-index: 2;
+}
+
+.brand-logo-card {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid var(--border-glass);
+    border-radius: 14px;
+    aspect-ratio: 1.65;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    transition: var(--transition-premium);
+}
+
+.brand-logo-card img {
+    max-width: 85%;
+    max-height: 75%;
+    object-fit: contain;
+    filter: grayscale(1) brightness(1.5) opacity(0.5);
+    transition: var(--transition-premium);
+}
+
+.brand-logo-card:hover {
+    background: rgba(255, 255, 255, 0.035);
+    border-color: var(--border-glass-glow);
+    transform: translateY(-5px);
+}
+
+.brand-logo-card:hover img {
+    filter: grayscale(0) brightness(1) opacity(1);
+    transform: scale(1.08);
+}
+
+.loop-gold-brands {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 220px;
+    height: 220px;
+    opacity: 0.2;
+}
+
+/* H. Manifesto Identidade Visual (Slide 11) */
+.iv-manifest-layout {
+    width: 100%;
+    height: 100%;
+    padding: 110px 80px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--slate);
+}
+
+.logo-header-iv {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-iv-icon {
+    height: 50px;
+    object-fit: contain;
+}
+
+.iv-main-box {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto 35px auto;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--gold);
+}
+
+.iv-main-box .secondary-text {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 252, 0.75);
+    line-height: 1.5;
+    margin-top: 12px;
+    font-weight: 400;
+}
+
+.iv-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.iv-step-card {
+    background: var(--alabaster);
+    color: var(--slate);
+    border-radius: 14px;
+    padding: 30px 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+}
+
+.iv-step-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--terracotta);
+    margin-bottom: 12px;
+}
+
+.iv-step-card p {
+    font-size: 0.85rem;
+    line-height: 1.55;
+    margin-bottom: 18px;
+    opacity: 0.9;
+}
+
+.step-deliveries {
+    border-top: 1px solid rgba(64, 69, 92, 0.1);
+    padding-top: 18px;
+    margin-top: auto;
+}
+
+.step-deliveries strong {
+    font-size: 0.88rem;
+    color: var(--slate);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.step-deliveries ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 14px;
+}
+
+.step-deliveries li {
+    font-size: 0.78rem;
+    position: relative;
+    padding-left: 14px;
+    line-height: 1.35;
+}
+
+.step-deliveries li::before {
+    content: '•';
+    color: var(--terracotta);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* I. Showcase de Portfólio (Slides 12, 13, 14, 15) */
+.showcase-layout {
+    width: 100%;
+    height: 100%;
+    padding: 110px 80px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.brand-gabriela {
+    background-color: #2b231e;
+}
+
+.showcase-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.brand-monogram {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    font-weight: 300;
+    color: #e2c0ad;
+    width: 70px;
+    height: 70px;
+    border: 1px solid #e2c0ad;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 6px;
+}
+
+.brand-title-box h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--alabaster);
+    line-height: 1.2;
+}
+
+.brand-title-box p {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: #e2c0ad;
+    margin-top: 3px;
+}
+
+.showcase-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+}
+
+.gallery-item {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    aspect-ratio: 1.28;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-premium);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Gabrielly Showcase */
+.brand-gabrielly {
+    background-color: #79577a;
+}
+
+.brand-icon-gabrielly {
+    height: 60px;
+}
+.brand-icon-gabrielly img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.showcase-gallery-tri {
+    display: grid;
+    grid-template-columns: 0.9fr 1.2fr 0.9fr;
+    gap: 24px;
+    width: 100%;
+    align-items: center;
+}
+
+.showcase-gallery-tri .gallery-item {
+    aspect-ratio: 1.15;
+}
+
+.showcase-gallery-tri .item-door {
+    aspect-ratio: 1.45;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+}
+
+/* Folle Mockups */
+.billboard-layout, .manual-layout {
+    padding: 0;
+    background-color: #efece6;
+}
+
+.billboard-frame, .manual-frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.billboard-img, .manual-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-premium);
+}
+
+.billboard-frame:hover .billboard-img,
+.manual-frame:hover .manual-img {
+    transform: scale(1.015);
+}
+
+/* J. Investimento Estático (Slide 17) */
+.pricing-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--terracotta);
+    position: relative;
+}
+
+.pricing-card {
+    width: min(580px, 90%);
+    background: var(--bg-glass-dark);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--border-glass-glow);
+    border-radius: 24px;
+    padding: clamp(25px, 4vh, 50px);
+    box-shadow: 0 45px 90px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    text-align: center;
+}
+
+.pricing-card-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3.5vh, 2.2rem);
+    font-weight: 800;
+    color: var(--alabaster);
+    margin-bottom: clamp(15px, 3vh, 30px);
+}
+
+/* Estilização Premium para o Valor Estático XXXXXX */
+.pricing-value-box {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: clamp(15px, 3vh, 35px);
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.price-currency {
+    font-family: var(--font-sans);
+    font-size: clamp(1.5rem, 3.5vh, 2.2rem);
+    font-weight: 500;
+    color: var(--terracotta);
+}
+
+.price-amount {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 10vh, 5.5rem);
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+    text-shadow: 0 0 35px rgba(255, 213, 110, 0.25);
+}
+
+.pricing-text-details {
+    font-size: clamp(0.9rem, 2vh, 1.15rem);
+    line-height: 1.65;
+    color: var(--alabaster);
+    opacity: 0.9;
+    max-width: 480px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 252, 0.1);
+    padding-top: clamp(15px, 2.5vh, 25px);
+}
+
+@keyframes pulseGlow {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255, 213, 110, 0.1)); }
+    50% { transform: scale(1.025); filter: drop-shadow(0 0 25px rgba(255, 213, 110, 0.35)); }
+}
+
+/* K. Slide de Encerramento (Slide 18) */
+.closing-panel {
+    background-color: var(--slate);
+    color: var(--alabaster);
+    flex: 0 0 48%;
+    padding: 120px 80px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid var(--border-glass);
+}
+
+.closing-text {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    line-height: 1.85;
+    color: var(--gold);
+    margin-bottom: 45px;
+}
+
+.closing-cta-box {
+    z-index: 2;
+}
+
+.closing-title {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--alabaster);
+    margin-bottom: 24px;
+}
+
+.btn-whatsapp-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 40px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, var(--terracotta), var(--peach));
+    color: var(--alabaster);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 15px 35px rgba(196, 104, 40, 0.3);
+    transition: var(--transition-fast);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-whatsapp-large:hover {
+    box-shadow: 0 20px 45px rgba(196, 104, 40, 0.5);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.poster-panel {
+    flex: 0 0 52%;
+}
+
+/* ==========================================================================
+   6. ANIMAÇÕES DE REVELAÇÃO (REVEAL ANIMATIONS ON SCROLL)
+   ========================================================================== */
+
+.reveal-text {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-section.in-view .reveal-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-section.in-view .fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-section.in-view .section-body {
+    transition-delay: 0.15s;
+}
+
+.slide-section.in-view .badge-active {
+    transition-delay: 0.3s;
+}
+
+/* ==========================================================================
+   7. PAGINAÇÃO INFERIOR & CONTROLES TÁTEIS
+   ========================================================================== */
+
+/* Container de bullets */
+.pagination-container {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: var(--bg-glass-dark);
+    padding: 10px 24px;
+    border-radius: 40px;
+    border: 1px solid var(--border-glass);
+    z-index: 900;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pagination-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+}
+
+.pagination-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 252, 242, 0.25);
+    cursor: pointer;
+    transition: var(--transition-premium);
+    border: none;
+    padding: 0;
+}
+
+.pagination-bullet:hover {
+    background: rgba(255, 252, 242, 0.6);
+    transform: scale(1.2);
+}
+
+.pagination-bullet.active {
+    width: 24px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold));
+    box-shadow: 0 0 12px rgba(196, 104, 40, 0.4);
+}
+
+.slide-counter {
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--alabaster);
+    letter-spacing: 0.05em;
+    min-width: 50px;
+    text-align: right;
+    border-left: 1px solid var(--border-glass);
+    padding-left: 15px;
+}
+
+/* Footer Hint */
+.footer-hint {
+    position: fixed;
+    bottom: 25px;
+    right: 40px;
+    font-size: 0.72rem;
+    color: var(--slate);
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    z-index: 800;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   8. MEDIA QUERIES & RESPONSIVIDADE EXCEPCIONAL
+   ========================================================================== */
+
+@media (max-width: 1400px) {
+    .section-title { font-size: 2.2rem; }
+    .cover-title { font-size: 7.5vw; }
+    .thacy-title { font-size: 3.8rem; }
+    .text-panel { padding: 100px 60px 60px 60px; }
+    .brands-grid { gap: 15px; }
+}
+
+@media (max-width: 1100px) {
+    .slide-section {
+        padding: 0;
+    }
+    
+    .nav-arrow {
+        display: none; /* Oculta setas no tablet/celular */
+    }
+    
+    .slide-content {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .member-frame {
+        aspect-ratio: 1.1;
+    }
+    
+    .socials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        height: auto;
+    }
+    
+    .instagram-card:nth-child(n+5) {
+        display: none;
+    }
+    
+    .laptops-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .laptop {
+        position: static;
+        width: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow: hidden; /* Mantém travado para o slider gerenciar o scroll e observers */
+    }
+    
+    .slider-container {
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .slide-section {
+        flex: 0 0 100vh;
+        width: 100vw;
+        height: 100vh;
+        scroll-snap-align: start;
+    }
+    
+    .split-layout {
+        flex-direction: column !important;
+    }
+    
+    .photo-panel {
+        flex: 0 0 35%;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-glass);
+    }
+    
+    .text-panel {
+        flex: 0 0 65%;
+        width: 100%;
+        padding: 24px;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+    
+    .section-body {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .cover-title {
+        font-size: 13vw;
+        margin-left: 20px;
+        margin-bottom: 100px;
+    }
+    
+    .quote-panel {
+        flex: 0 0 35%;
+        padding: 24px;
+    }
+    
+    .brand-quote {
+        font-size: 1.25rem;
+    }
+    
+    .socials-panel {
+        flex: 0 0 65%;
+        padding: 16px;
+    }
+    
+    .instagram-card {
+        width: 100%;
+        height: auto;
+    }
+
+    .insta-img-container {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        height: auto;
+    }
+    
+    .instagram-card:nth-child(n+3) {
+        display: none;
+    }
+    
+    .methodology-text {
+        flex: 0 0 50%;
+    }
+    
+    .mockups-panel {
+        flex: 0 0 50%;
+        padding: 16px;
+    }
+    
+    .laptop-3 {
+        display: none;
+    }
+    
+    .services-split-layout {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+    }
+    
+    .service-card-panel {
+        padding: 24px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-glass);
+    }
+    
+    .brands-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .iv-steps-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        overflow-y: auto;
+    }
+    
+    .iv-step-card {
+        padding: 20px;
+    }
+    
+    .showcase-gallery {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .showcase-gallery-tri {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .pricing-card {
+        width: 90%;
+        padding: 25px;
+    }
+    
+    .price-amount {
+        font-size: 4rem;
+    }
+    
+    .pagination-container {
+        display: none; /* Bullets ocultos no celular */
+    }
+}
