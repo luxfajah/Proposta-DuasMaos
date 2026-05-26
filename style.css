@@ -489,7 +489,8 @@ body.cluster-closing::before {
 }
 
 .manifesto-panel {
-    background-color: var(--terracotta);
+    background: linear-gradient(rgba(196, 104, 40, 0.85), rgba(196, 104, 40, 0.95)), url('assets/metodologia_bg.png') no-repeat center center;
+    background-size: cover;
     color: var(--alabaster);
 }
 
@@ -532,11 +533,12 @@ body.cluster-closing::before {
 .team-layout {
     width: 100%;
     height: 100%;
-    padding: 120px 90px 90px 90px;
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 80px) clamp(40px, 6vh, 80px) clamp(20px, 5vw, 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--terracotta);
+    background: linear-gradient(rgba(196, 104, 40, 0.85), rgba(196, 104, 40, 0.95)), url('assets/metodologia_bg.png') no-repeat center center;
+    background-size: cover;
 }
 
 .team-layout .section-title {
@@ -601,10 +603,11 @@ body.cluster-closing::before {
 .quote-panel {
     flex: 0 0 30%;
     height: 100%;
-    padding: 100px 40px 60px 60px;
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 40px) clamp(40px, 6vh, 60px) clamp(20px, 5vw, 60px);
     display: flex;
     align-items: center;
-    background-color: var(--slate);
+    background: linear-gradient(rgba(64, 69, 92, 0.85), rgba(64, 69, 92, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
+    background-size: cover;
     border-right: 1px solid var(--border-glass);
 }
 
@@ -620,10 +623,11 @@ body.cluster-closing::before {
 .socials-panel {
     flex: 0 0 70%;
     height: 100%;
-    padding: 70px 30px 40px 30px;
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 4vw, 30px);
     display: flex;
     align-items: center;
-    background-color: var(--slate);
+    background: linear-gradient(rgba(64, 69, 92, 0.85), rgba(64, 69, 92, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
+    background-size: cover;
     overflow: hidden;
 }
 
@@ -960,11 +964,12 @@ body.cluster-closing::before {
 .brands-layout {
     width: 100%;
     height: 100%;
-    padding: 110px 90px 90px 90px;
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 90px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--slate);
+    background: linear-gradient(rgba(64, 69, 92, 0.85), rgba(64, 69, 92, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
+    background-size: cover;
     position: relative;
 }
 
@@ -1021,11 +1026,12 @@ body.cluster-closing::before {
 .iv-manifest-layout {
     width: 100%;
     height: 100%;
-    padding: 110px 80px 80px 80px;
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--slate);
+    background: linear-gradient(rgba(64, 69, 92, 0.85), rgba(64, 69, 92, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
+    background-size: cover;
 }
 
 .logo-header-iv {
@@ -1333,10 +1339,11 @@ body.cluster-closing::before {
 
 /* K. Slide de Encerramento (Slide 18) */
 .closing-panel {
-    background-color: var(--slate);
+    background: linear-gradient(rgba(64, 69, 92, 0.85), rgba(64, 69, 92, 0.95)), url('assets/servicos_bg.png') no-repeat center center;
+    background-size: cover;
     color: var(--alabaster);
     flex: 0 0 48%;
-    padding: 120px 80px 80px 80px;
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 5vw, 80px);
     display: flex;
     flex-direction: column;
     justify-content: center;
